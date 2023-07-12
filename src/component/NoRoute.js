@@ -7,8 +7,8 @@ const NoRoute = () => {
 
 	return (
 		<div className={`${appState.mode}-mode ${appState.mode}-mode_no-route`}>
-			<Link to={`/home`}> 
-				<span>Country details can not be found, click to go back.</span>
+			<Link to={`/`}> 
+				<span>Country details can not be found, click to refresh.</span>
 			</Link>
 		</div>
 	)
