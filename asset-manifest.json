@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/reactjs_searchcountries/static/css/main.72d3a1a3.css",
+    "main.js": "/reactjs_searchcountries/static/js/main.0872a6e2.js",
+    "static/js/787.72543c43.chunk.js": "/reactjs_searchcountries/static/js/787.72543c43.chunk.js",
+    "static/media/NotoSerif-Regular.ttf": "/reactjs_searchcountries/static/media/NotoSerif-Regular.0a8eb31c4391a102ebc2.ttf",
+    "index.html": "/reactjs_searchcountries/index.html",
+    "main.72d3a1a3.css.map": "/reactjs_searchcountries/static/css/main.72d3a1a3.css.map",
+    "main.0872a6e2.js.map": "/reactjs_searchcountries/static/js/main.0872a6e2.js.map",
+    "787.72543c43.chunk.js.map": "/reactjs_searchcountries/static/js/787.72543c43.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72d3a1a3.css",
+    "static/js/main.0872a6e2.js"
+  ]
+}
