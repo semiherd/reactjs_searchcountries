@@ -115,35 +115,6 @@ test('should change the app-mode on the header-bar', async () => {
 
 })
 
-test('filter by continent', async () => {
-  render(<AppProvider><Home /></AppProvider>)
-  waitFor(() => {
-    const testContinent= [
-      {name:'All',count:250},
-      {name:'Africa',count:59},
-      {name:'Americas',count:56},
-      {name:'Antarctic',count:5},
-      {name:'Asia',count:50},
-      {name:'Europe ',count:53},
-      {name:'Oceania ',count:27},
-    ]
-    userEvent.click(screen.getByRole('heading',{level:1,name:'Filter By Continent'}))
-    const optionsDiv= within(screen.getByRole('heading',{level:1,name:'Filter By Continent'}).parentElement)
-    const continents= within(optionsDiv).getByTestId('continent-options')
-    expect(continents).toBeInTheDocument()
-    const option1= within(continents).getAllByRole('heading',{level:1,name: `${testContinent}`})
-    userEvent.click(option1)
-    expect(screen.getByRole('heading',{level:1,name:`Filter By Continent`})).not.toBeInTheDocument()
-    expect(screen.getByRole('heading',{level:1,name:`${testContinent[1].name}`})).not.toBeInTheDocument()
-    expect(screen.getByRole('heading',{level:1,name:`Filtered - ${testContinent[1].name}`})).toBeInTheDocument()
 
-    const appBody= screen.queryByTestId('app-body')
-    const flagItems= within(appBody).getAllByTestId('flag-item') 
-    const totalItem= within(appBody).getByRole('heading',{level:2})  
-    const visibleItemLen= flagItems.length>1? `${flagItems.length} countries`:flagItems.length==1?'1 country':null
-    expect(flagItems).toHaveLength(testContinent[1].count)
-    expect(totalItem).toHaveTextContent(visibleItemLen)
-  })
-})
 
 

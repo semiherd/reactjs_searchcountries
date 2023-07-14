@@ -16,12 +16,12 @@ const Home= () => {
 			if(searchKey==''){
 				if(appState.filterCont=='all') return countries
 				else
-					return await countries.filter(item=>item.region.toLowerCase()==appState.filterCont.toLowerCase())
+					return await countries?.filter(item=>item.region.toLowerCase()==appState.filterCont.toLowerCase())
 			}else{
 				if(appState.filterCont=='all')
-					return await countries.filter(item=> item.name.common.toLowerCase().includes(searchKey) || item.region.toLowerCase().includes(searchKey))
+					return await countries?.filter(item=> item.name.common.toLowerCase().includes(searchKey) || item.region.toLowerCase().includes(searchKey))
 				else
-					return await countries.filter(item=>item.region.toLowerCase()==appState.filterCont.toLowerCase() && item.name.common.toLowerCase().includes(searchKey))
+					return await countries?.filter(item=>item.region.toLowerCase()==appState.filterCont.toLowerCase() && item.name.common.toLowerCase().includes(searchKey))
 			}		
 		}catch(e){
 			console.log(e)

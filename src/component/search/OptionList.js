@@ -37,7 +37,7 @@ const OptionList = (props) => {
 		}
 	}
 	return (
-		<div className={`${appState.mode}-mode ${appState.mode}-mode_option-list`} data-testid="continent-options">
+		<div className={`${appState.mode}-mode ${appState.mode}-mode_option-list`}>
 			{continents?.map((option,index) => <h1 key={index.toString()} onClick={() => optionSelect(option.id)}>{option.name}</h1>)}
 		</div>
 	)

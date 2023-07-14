@@ -31,7 +31,7 @@ const FilterItem = (props) => {
 	},[toggle])
 
 	return (
-		<div className={`${appState.mode}-mode filter-item`}>
+		<div className={`${appState.mode}-mode filter-item`} data-testid="filter-item">
 			<h1 onClick={() => setToggle(i=>!i)}>{appState.filterCont=='all'? 'Filter By Continent':'Filtered - '+ filteredContinent}</h1>
 			{toggle && <OptionList data={CONTINENT_OPTIONS} />}
 		</div>
