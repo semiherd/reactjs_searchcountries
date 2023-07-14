@@ -1,5 +1,5 @@
 live demo: https://semiherd.github.io/reactjs_searchcountries/
-Tech:
+Tech:<br>
   Responsive mobile first design approach is implemented on this reactjs app.
   Context API is used to manage state within the app.
   Rest API used to fetch data from restcountries.com.
