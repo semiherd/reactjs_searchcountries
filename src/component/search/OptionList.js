@@ -32,6 +32,12 @@ const OptionList = (props) => {
 				type: 'CONTINENT_FILTER',
 				data: item
 			})
+			const filteringState= appState.filterState?false:true
+			await appDispatch({
+				type: 'FILTERING',
+				data: filteringState
+			})
+
 		}catch(e){
 			console.log(e)
 		}
