@@ -11,25 +11,14 @@ import {
 const Body = () => {
 	
 	return (
-<<<<<<< HEAD
 		<Router>
 			<Routes>
 				<Route path="/reactjs_searchcountries" element={<Home />} />
-				<Route path="/" element={<Home />} />
+				<Route path="/home" element={<Home />} />
 				<Route index path="/country/:name" element={<Country />} />
 				<Route path="*" element={<NoRoute />} />     
 			</Routes>
 		</Router>		
-=======
-			<Router>
-					<Routes>
-						<Route path="/reactjs_searchcountries" element={<Home />} />
-						<Route path="/home" element={<Home />} />
-						<Route index path="/country/:name" element={<Country />} />
-						<Route path="*" element={<NoRoute />} />     
-					</Routes>
-			</Router>		
->>>>>>> d7abeeb (update test)
 	)
 };
 
