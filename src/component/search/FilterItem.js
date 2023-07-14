@@ -4,11 +4,10 @@ import OptionList from './OptionList'
 import { useAppState,useAppDispatch } from "../../context/AppContext"
 import * as fn from '../service/index'
 
-const FilterItem = (props) => {
-	const[toggle,setToggle]= useState(false)
-	const[filteredContinent,setFilteredContinent]= useState(null)
+const FilterItem = () => {
 	const appState= useAppState()
 	const appDispatch= useAppDispatch()
+	const[filteredContinent,setFilteredContinent]= useState(null)
 
 	async function handleContinentName(){
 		try{
@@ -18,22 +17,26 @@ const FilterItem = (props) => {
 			console.log(e)
 		}
 	}
+	async function handleFilterState(){
+		try{
+			const data= appState.filterState?false:true
+			await appDispatch({
+				type: 'FILTERING',
+				data
+			})
+		}catch(e){
+			console.log(e)
+		}
+	}
+	
 	useEffect(() => {
-		setToggle(i=>!i)
 		handleContinentName()
-	},[appState.filterCont])
-
-	useEffect(() => {
-		appDispatch({
-			type: 'FILTERING',
-			data: toggle
-		})
-	},[toggle])
+	},[appState?.filterCont])
 
 	return (
 		<div className={`${appState.mode}-mode filter-item`} data-testid="filter-item">
-			<h1 onClick={() => setToggle(i=>!i)}>{appState.filterCont=='all'? 'Filter By Continent':'Filtered - '+ filteredContinent}</h1>
-			{toggle && <OptionList data={CONTINENT_OPTIONS} />}
+			<h1 onClick={() => handleFilterState()}>{appState.filterCont=='all'? 'Filter By Continent':'Filtered - '+ filteredContinent}</h1>
+			{appState?.filterState && <OptionList data={CONTINENT_OPTIONS} />}
 		</div>
 	)
 };
